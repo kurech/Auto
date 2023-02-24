@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Models>
+@{
+    ViewData["Title"] = "Список моделей по бренду";
+}
+<form asp-controller="home" method="get">
+    <table class="table">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Active</td>
+            </tr>
+        }
+    </table>
+</form>

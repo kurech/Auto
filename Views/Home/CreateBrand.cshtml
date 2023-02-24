@@ -1,0 +1,19 @@
+﻿@model Brands
+@{
+    ViewBag.Title = "Добавление марок авто";
+}
+
+<h4>Пожалуйста, введите данные нового бренда</h4>
+<form asp-action="CreateBrand" asp-controller="home">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Имя</label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Active" class="control-label">Активность</label>
+        <input type="text" asp-for="Active" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Отправить" class="btn btn-default" />
+    </div>
+</form>

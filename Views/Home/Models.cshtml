@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Models>
+@{
+    ViewData["Title"] = "Список моделей авто";
+}
+
+<a asp-action="CreateModel">Добавить модель автомобиля</a>
+<table class="table">
+    @foreach (var item in Model)
+    {
+        if (item.Active == false)
+        {
+            <tr class="bg-light">
+                <td>@item.BrandId</td>
+                <td>@item.Name</td>
+                <td class="text-md-right">
+                    <a asp-action="EditModel" asp-controller="Home" asp-route-id="@item.Id">Изменить</a>
+                </td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td>@item.BrandId</td>
+                <td>@item.Name</td>
+                <td class="text-md-right">
+                    <a asp-action="EditModel" asp-controller="Home" asp-route-id="@item.Id">Изменить</a>
+                </td>
+            </tr>
+        }
+
+    }
+</table>
